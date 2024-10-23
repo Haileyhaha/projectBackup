@@ -1,0 +1,44 @@
+create database positivedb;
+use positivedb;
+
+create user`positiveuser`@`%` identified by '1234'; 
+grant all privileges on positivedb.* to `positiveuser`@`%`;
+
+show tables;
+
+INSERT INTO tbl_cart (member_owner, status)
+VALUES
+(user1, 'pending');
+
+
+describe table tbl_product;
+desc tbl_member;
+select * from tbl_product;
+select * from user;
+select * from product_image_list;
+select * from tbl_tours;
+select * from tour_tour_image_list;
+select * from tbl_tour_date;
+select * from tbl_category;
+select * from tbl_product;
+select * from tbl_member;
+select * from user;
+select * from tbl_cart;
+select * from tbl_cart_item;
+
+drop table product_image_list;
+drop table tbl_tour_date;
+drop table member_member_role_list;
+drop table tbl_tours;
+drop table tour_tour_image_list;
+drop table tbl_category;
+drop table tbl_member;
+drop table tbl_cart;
+drop table tbl_cart_item;
+drop table tbl_product;
+
+drop database positivedb;
+select * from tbl_tour_date td where td.tno = 1
+
+
+
