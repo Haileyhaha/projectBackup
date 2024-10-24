@@ -1,6 +1,5 @@
 package com.positive.culture.seoulQuest.seoulQuest.repository;
 
-import com.positive.culture.seoulQuest.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,9 +13,6 @@ public class CartTest {
 
     @Autowired
     private CartRepository cartRepository;
-
-    @Autowired
-    private UserMapper userMapper;
 
     @Autowired
     private MemberRepository memberRepository;

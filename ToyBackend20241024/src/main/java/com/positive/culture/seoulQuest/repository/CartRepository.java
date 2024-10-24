@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface CartRepository extends JpaRepository<Cart, Long> {
+    //memerid로 해당 카트를 찾아줌
     @Query("select cart from Cart cart where cart.owner.memberId = :memberId")
     public Optional<Cart> getCartOfMember(@Param("memberId") String memberId);
 }

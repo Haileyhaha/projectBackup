@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Log4j2
@@ -41,17 +42,25 @@ public class CartRepositoryTest3 {
 
         // Assuming you already have an existing cart, tour, and product in the database.
         Cart cart = cartRepository.findById(1L).orElseThrow(() -> new RuntimeException("Cart not found"));
-        Product product = productRepository.findById(7L).orElse(null); // Optional, if it's a product item
+        Product product = productRepository.findById(1L).orElse(null); // Optional, if it's a product item
 
         CartItem cartItem = CartItem.builder()
                 .cart(cart)   // Associate with existing Cart
                 .product(product)  // Associate with existing Product if it's a product item
-                .pqty(48)      // Set quantity for product (if applicable)
+                .pqty(2)      // Set quantity for product (if applicable)
                 .build();
 
         cartItemRepository.save(cartItem);  // Save CartItem to the database
     }
 
+
+    @Transactional
+    @Test
+    public void cinoTest(){
+        Long cino = 1l;
+        Optional<CartItem> cartItem = cartItemRepository.findCartItemByCino(cino);
+        log.info(cartItem);
+    }
 
 //    @Test
 //    @Transactional
