@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.positive.culture.seoulQuest.mapper.TourMapper">
+    <select id="getTourByTno" resultType="com.positive.culture.seoulQuest.dto.TourDTO" parameterType="long">
+        select
+        tno,
+        category_no categoryName,
+        tname,
+        tdesc,
+        tprice,
+        tlocation,
+        create_at
+        from tbl_tours
+        where tno = #{tno}
+    </select>
+</mapper>
