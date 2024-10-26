@@ -6,11 +6,6 @@ grant all privileges on positivedb.* to `positiveuser`@`%`;
 
 show tables;
 
-INSERT INTO tbl_cart (member_owner, status)
-VALUES
-(user1, 'pending');
-
-
 describe table tbl_product;
 desc tbl_member;
 select * from tbl_product;
@@ -38,7 +33,6 @@ drop table tbl_cart_item;
 drop table tbl_product;
 
 drop database positivedb;
-select * from tbl_tour_date td where td.tno = 1
 
 
 
