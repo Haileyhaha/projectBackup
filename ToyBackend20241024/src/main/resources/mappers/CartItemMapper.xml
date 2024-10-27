@@ -6,9 +6,4 @@
     <select id="getCartItemsByCartId" resultType="com.positive.culture.seoulQuest.domain.CartItem">
         SELECT * FROM tbl_cart_item WHERE cart_cno = #{cartId}
     </select>
-
-<!--    <select id="getCartByMemberId" resultType="com.positive.culture.seoulQuest.domain.Cart">-->
-<!--        select * from tbl_cart cart where  -->
-<!--    </select>-->
-
 </mapper>

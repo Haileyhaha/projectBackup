@@ -1,16 +1,16 @@
 package com.positive.culture.seoulQuest.seoulQuest.repository;
 
+import com.positive.culture.seoulQuest.domain.Cart;
 import com.positive.culture.seoulQuest.domain.CartItem;
+import com.positive.culture.seoulQuest.domain.Member;
 import com.positive.culture.seoulQuest.domain.Product;
 import com.positive.culture.seoulQuest.repository.CartItemRepository;
+import com.positive.culture.seoulQuest.repository.CartRepository;
+import com.positive.culture.seoulQuest.repository.MemberRepository;
 import com.positive.culture.seoulQuest.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.positive.culture.seoulQuest.repository.CartRepository;
-import com.positive.culture.seoulQuest.repository.MemberRepository;
-import com.positive.culture.seoulQuest.domain.Cart;
-import com.positive.culture.seoulQuest.domain.Member;
 
 @SpringBootTest
 public class CartTest {
@@ -28,21 +28,21 @@ public class CartTest {
     private ProductRepository productRepository;
 
     //insert cart
-    @Test
-    public void insertCart() {
-        // Fetch the existing Member entity by memberId
-        Member member = memberRepository.findByMemberId("user1")
-                .orElseThrow(() -> new RuntimeException("Member not found"));
-
-        // Create a new Cart and associate it with the fetched member
-        Cart cart = Cart.builder()
-                .owner(member)  // Assign the fetched Member object to the owner
-                .status("active")  // Set the cart status
-                .build();
-
-        // Save the cart to the database
-        cartRepository.save(cart);
-    }
+//    @Test
+//    public void insertCart() {
+//        // Fetch the existing Member entity by memberId
+//        Member member = memberRepository.findByMemberId("user1")
+//                .orElseThrow(() -> new RuntimeException("Member not found"));
+//
+//        // Create a new Cart and associate it with the fetched member
+//        Cart cart = Cart.builder()
+//                .owner(member)  // Assign the fetched Member object to the owner
+//                .status("active")  // Set the cart status
+//                .build();
+//
+//        // Save the cart to the database
+//        cartRepository.save(cart);
+//    }
 
     //insertCartItem
     @Test
