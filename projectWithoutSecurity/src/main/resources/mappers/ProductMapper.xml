@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.positive.culture.seoulQuest.mapper.ProductMapper">
+
+    <select id="getProductByPno" resultType="com.positive.culture.seoulQuest.dto.ProductDTO" parameterType="long">
+        select
+        pno,
+        category_no categoryName,
+        pname,
+        pdesc,
+        price,
+        quantity,
+        shipping_cost shippingCost,
+        del_Flag
+        from tbl_product
+        where pno = #{pno}
+    </select>
+
+
+</mapper>
